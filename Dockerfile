@@ -7,6 +7,8 @@ RUN apt-get install -y wget
 
 # get maven 3.2.2
 RUN wget --no-verbose -O /tmp/apache-maven-3.2.2.tar.gz http://archive.apache.org/dist/maven/maven-3/3.2.2/binaries/apache-maven-3.2.2-bin.tar.gz
+RUN wget --no-verbose -O /usr/local/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+RUN chmod a+x /usr/local/bin/lein
 
 # verify checksum
 RUN echo "87e5cc81bc4ab9b83986b3e77e6b3095 /tmp/apache-maven-3.2.2.tar.gz" | md5sum -c
